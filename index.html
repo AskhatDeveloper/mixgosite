@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mix&Go — Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <h1 class="name">Mix&Go</h1>
+    </header>
+
+    <nav class="nav-below-header">
+      <div class="hamburger" id="hamburger0">
+        <img src="icons/solar--hamburger-menu-outline.png" alt="menu" />
+      </div>
+      <ul id="fsMenu0" class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a href="https://wa.me/77076224005" target="_blank">WhatsApp</a>
+        </li>
+        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+      </ul>
+    </nav>
+
+    <main class="home-main">
+      <p>
+        Доставка по городу Алматы: <strong>400₸</strong> (от 5 напитков и
+        самовывоз — бесплатно)
+      </p>
+
+      <div class="online-order-container">
+        <a href="menu.html" class="order-btn online-order-btn"
+          >Посмотреть меню</a
+        >
+      </div>
+    </main>
+
+    <script>
+      const hamb0 = document.getElementById("hamburger0");
+      const fs0 = document.getElementById("fsMenu0");
+      hamb0.addEventListener("click", () => {
+        fs0.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>

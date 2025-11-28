@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mix&Go — Contact</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand">
+        <div class="logo brand-icon">M</div>
+        <h1>Mix&Go</h1>
+      </div>
+
+      <div class="hamburger" id="hamburger3">
+        <img src="icons/solar--hamburger-menu-outline.png" alt="menu" />
+      </div>
+    </header>
+
+    <div class="fullscreen" id="fsMenu3" aria-hidden="true">
+      <button class="close" id="fsClose3">✕</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a href="https://wa.me/77076224005" target="_blank" rel="noreferrer"
+            >WhatsApp</a
+          >
+        </li>
+        <li>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer"
+            >Instagram</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <main class="container">
+      <h2 style="margin: 0 0 12px 0">Контакты</h2>
+      <p style="margin: 0 0 18px 0; color: #444">
+        Мы доставляем по всему Алматы — звоните или пишите.
+      </p>
+
+      <section class="contact-grid">
+        <div class="contact-card">
+          <h4>Адрес</h4>
+          <p>г. Алматы, ул. Ароматная, 15 (мобильная точка)</p>
+        </div>
+
+        <div class="contact-card">
+          <h4>Телефон</h4>
+          <p>
+            <a
+              href="tel:+77001234567"
+              style="color: inherit; text-decoration: none"
+              >+7 (700) 123-45-67</a
+            >
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h4>Доставка</h4>
+          <p>
+            По всему городу Алматы — стоимость 400 ₸ (от 5 напитков — бесплатно)
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h4>Социальные сети</h4>
+          <p>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer"
+              >Instagram</a
+            ><br />
+            <a href="https://wa.me/77076224005" target="_blank" rel="noreferrer"
+              >WhatsApp</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <div class="footer">Работаем ежедневно: 9:00 — 22:00</div>
+    </main>
+
+    <script>
+      const hamb3 = document.getElementById("hamburger3");
+      const fs3 = document.getElementById("fsMenu3");
+      const close3 = document.getElementById("fsClose3");
+      hamb3.addEventListener("click", () => fs3.classList.add("open"));
+      close3.addEventListener("click", () => fs3.classList.remove("open"));
+      fs3
+        .querySelectorAll("a")
+        .forEach((a) =>
+          a.addEventListener("click", () => fs3.classList.remove("open"))
+        );
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") fs3.classList.remove("open");
+      });
+    </script>
+  </body>
+</html>
