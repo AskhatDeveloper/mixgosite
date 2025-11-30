@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Frucino — Menu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand">
+        <div class="logo brand-icon">F</div>
+        <h1>Frucino</h1>
+      </div>
+
+      <div class="hamburger" id="hamburger2">
+        <img src="icons/solar--hamburger-menu-outline.png" alt="menu" />
+      </div>
+    </header>
+
+    <div class="fullscreen" id="fsMenu2" aria-hidden="true">
+      <button class="close" id="fsClose2">✕</button>
+      <ul>
+        <!-- <li><a href="index.html">Home</a></li> -->
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a href="https://wa.me/77076224005" target="_blank" rel="noreferrer"
+            >WhatsApp</a
+          >
+        </li>
+        <li>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer"
+            >Instagram</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <main class="container">
+      <h2 style="margin: 0 0 12px 0">Меню</h2>
+      <p style="margin: 0 0 18px 0; color: #444">
+        Классические и сезонные напитки — с доставкой по Алматы.
+      </p>
+      <p>
+        Доставка по городу Алматы: <strong>400₸</strong> (от 5 напитков и
+        самовывоз — бесплатно)
+      </p>
+
+      <section class="menu-grid">
+        <article class="card">
+          <div class="card-img">
+            <img
+              src="img/recept-60175-1240x827-removebg-preview.png"
+              alt="Фраппе"
+            />
+          </div>
+          <div class="card-body">
+            <h3>Кофе Фраппе</h3>
+            <p>Холодный, насыщенный, с кремовой пенкой.</p>
+            <div class="price">600 ₸</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="img/unnamed-removebg-preview-88.png" alt="Смузи" />
+          </div>
+          <div class="card-body">
+            <h3>Банановый смузи</h3>
+            <p>молоко, банан, капля меда — полезно и вкусно.</p>
+            <div class="price">750 ₸</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="img/limonad2.png" alt="Лимонад" />
+          </div>
+          <div class="card-body">
+            <h3>Освежающий лимонад</h3>
+            <p>Лимон, мята и немного сахара — идеально в жару.</p>
+            <div class="price">550 ₸</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="img/3F3F3F_-removebg-preview.png" alt="Попкорн" />
+          </div>
+          <div class="card-body">
+            <h3>Карамельный попкорн</h3>
+            <p>Хрустящий и сладкий — дополняет любой напиток.</p>
+            <div class="price">400 ₸</div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const hamb2 = document.getElementById("hamburger2");
+      const fs2 = document.getElementById("fsMenu2");
+      const close2 = document.getElementById("fsClose2");
+      hamb2.addEventListener("click", () => fs2.classList.add("open"));
+      close2.addEventListener("click", () => fs2.classList.remove("open"));
+      fs2
+        .querySelectorAll("a")
+        .forEach((a) =>
+          a.addEventListener("click", () => fs2.classList.remove("open"))
+        );
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") fs2.classList.remove("open");
+      });
+    </script>
+  </body>
+</html>
