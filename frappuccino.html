@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Фраппучино - Состав и Калории</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">Frucino</div>
+      <div class="hamburger" id="hamburgerBtn">
+        <img src="icons/solar--hamburger-menu-outline.png" alt="menu" />
+      </div>
+    </header>
+
+    <div class="fullscreen-menu" id="fullscreenMenu">
+      <div class="fullscreen-close" id="menuClose">✕</div>
+      <a href="index.html">Меню</a>
+      <a href="contact.html">Контакты</a>
+    </div>
+
+    <div class="product-detail-container">
+      <div class="product-header">
+        <h1>Фраппучино</h1>
+        <p>
+          Идеальное сочетание крепкого кофе, молока и льда, увенчанное взбитыми
+          сливками.
+        </p>
+      </div>
+
+      <div class="detail-content-grid">
+        <div class="detail-image-wrapper">
+          <img
+            src="img/recept-60175-1240x827-removebg-preview.png"
+            alt="Изображение Фраппучино"
+          />
+        </div>
+
+        <div class="detail-info-wrapper">
+          <div class="nutrients-table">
+            <h3>📊 Пищевая ценность (на порцию 350 мл)</h3>
+            <table>
+              <tr>
+                <th>Показатель</th>
+                <th>Количество</th>
+                <th>Норма в % (Средняя)</th>
+              </tr>
+              <tr>
+                <td><strong>Калории (ккал)</strong></td>
+                <td>310 ккал</td>
+                <td>15.5%</td>
+              </tr>
+              <tr>
+                <td>Жиры</td>
+                <td>12 г</td>
+                <td>16%</td>
+              </tr>
+              <tr>
+                <td>— Насыщенные</td>
+                <td>8 г</td>
+                <td>40%</td>
+              </tr>
+              <tr>
+                <td>Белки</td>
+                <td>6 г</td>
+                <td>8%</td>
+              </tr>
+              <tr>
+                <td>Углеводы</td>
+                <td>45 г</td>
+                <td>12%</td>
+              </tr>
+              <tr>
+                <td>— Сахар</td>
+                <td>42 г</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Кофеин</td>
+                <td>100 мг</td>
+                <td>—</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="ingredients-list">
+            <h3>📜 Состав напитка</h3>
+            <ul>
+              <li>Молоко (цельное или обезжиренное)</li>
+              <li>Крепкий эспрессо или кофе-концентрат</li>
+              <li>Шоколадный сироп (Мокко)</li>
+              <li>Кубики льда</li>
+              <li>Специальная основа (для густоты)</li>
+              <li>Взбитые сливки (топпинг)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="back-link">
+        <a href="menu.html">← Вернуться к Меню Напитков</a>
+      </div>
+    </div>
+
+    <script>
+      // Скрипт для работы бургер-меню на этой странице
+      const burger = document.getElementById("hamburgerBtn");
+      const menu = document.getElementById("fullscreenMenu");
+      const closeBtn = document.getElementById("menuClose");
+
+      burger.onclick = () => menu.classList.add("open");
+      closeBtn.onclick = () => menu.classList.remove("open");
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") menu.classList.remove("open");
+      });
+    </script>
+  </body>
+</html>
