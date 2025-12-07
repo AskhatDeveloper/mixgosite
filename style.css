@@ -71,10 +71,9 @@ body {
 }
 
 /* =====================================
-    FULLSCREEN MENU
+    FULLSCREEN MENU (ОБЪЕДИНЕННЫЕ СТИЛИ)
 ===================================== */
-.fullscreen-menu,
-.fullscreen {
+.fullscreen-menu {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.92);
@@ -90,26 +89,22 @@ body {
   z-index: 1000;
 }
 
-.fullscreen-menu.open,
-.fullscreen.open {
+.fullscreen-menu.open {
   transform: translateY(0);
 }
 
-.fullscreen-menu a,
-.fullscreen a {
+.fullscreen-menu a {
   color: var(--white);
   font-weight: 700;
   text-decoration: none;
   transition: color 0.3s;
 }
 
-.fullscreen-menu a:hover,
-.fullscreen a:hover {
+.fullscreen-menu a:hover {
   color: var(--accent);
 }
 
-.fullscreen-close,
-.fullscreen .close {
+.fullscreen-close {
   position: absolute;
   top: 20px;
   right: 26px;
@@ -119,8 +114,7 @@ body {
   transition: transform 0.3s;
 }
 
-.fullscreen-close:hover,
-.fullscreen .close:hover {
+.fullscreen-close:hover {
   transform: rotate(90deg);
 }
 
@@ -208,26 +202,9 @@ body {
   transform: translateY(-3px);
 }
 
-.arrows {
-  margin-top: 35px;
-  display: flex;
-  gap: 30px;
-}
-
-.arrow {
-  font-size: 40px;
-  cursor: pointer;
-  transition: transform 0.3s, color 0.3s;
-}
-
-.arrow:hover {
-  transform: scale(1.2);
-  color: var(--accent);
-}
-
 /* RIGHT SIDE */
 .hero-right {
-  position: relative;
+  position: relative; /* ВАЖНО: для позиционирования .arrows */
   width: 430px;
   height: 430px;
   display: flex;
@@ -261,6 +238,40 @@ body {
 
 .hero-right img.main-can:hover {
   transform: translate(-50%, -50%) scale(1.05) rotate(-2deg);
+}
+
+/* === СТИЛИ ДЛЯ СТРЕЛОК СНАРУЖИ КРУГА, НО БЛИЗКО (Улучшено) === */
+
+/* Контейнер для позиционирования стрелок */
+.arrows {
+  position: absolute;
+  top: 50%;
+  /* Увеличиваем ширину для гарантированного отступа */
+  width: 150%;
+  /* Центрируем контейнер: (150% - 100%) / 2 = 25% */
+  left: -25%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+/* Стиль самой стрелки (Жирный текст, крупный) */
+.arrow {
+  font-size: 60px;
+  font-weight: 700; /* Жирнее */
+  cursor: pointer;
+  color: var(--dark); /* Темный цвет */
+  background-color: transparent; /* Без фона */
+  box-shadow: none; /* Без тени */
+  transition: transform 0.3s, color 0.3s;
+  /* Дополнительный отступ для левой/правой стрелки, чтобы визуально "приклеить" их к кругу */
+  padding: 0 10px;
+}
+
+.arrow:hover {
+  transform: scale(1.2);
+  color: var(--accent);
 }
 
 /* =====================================
@@ -458,7 +469,18 @@ body {
   .hero-left {
     text-align: center;
   }
+
+  /* Адаптивные стили для стрелок на мобильных */
+  .arrows {
+    width: 120%;
+    left: -10%;
+  }
+
+  .arrow {
+    font-size: 45px;
+  }
 }
+
 /* Дополнительная точка останова для страницы деталей */
 @media (max-width: 768px) {
   .detail-content-grid {

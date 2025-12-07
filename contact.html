@@ -18,18 +18,15 @@
         <div class="logo brand-icon"></div>
         <h1>Frucino</h1>
       </div>
-      <!-- test -->
       <div class="hamburger" id="hamburger3">
         <img src="icons/solar--hamburger-menu-outline.png" alt="menu" />
       </div>
     </header>
 
-    <div class="fullscreen" id="fsMenu3" aria-hidden="true">
-      <button class="close" id="fsClose3">✕</button>
-      <ul>
-        <li><a href="index.html">Меню</a></li>
-        <li><a href="contact.html">Контакты</a></li>
-      </ul>
+    <div class="fullscreen-menu" id="fsMenu3" aria-hidden="true">
+      <div class="fullscreen-close" id="fsClose3">✕</div>
+      <a href="index.html">Меню</a>
+      <a href="contact.html">Контакты</a>
     </div>
 
     <main class="container">
@@ -39,11 +36,6 @@
       </p>
 
       <section class="contact-grid">
-        <div class="contact-card">
-          <h4>Адрес</h4>
-          <p>г. Алматы (мобильная точка)</p>
-        </div>
-
         <div class="contact-card">
           <h4>Доставка</h4>
           <p>
@@ -74,13 +66,16 @@
       const hamb3 = document.getElementById("hamburger3");
       const fs3 = document.getElementById("fsMenu3");
       const close3 = document.getElementById("fsClose3");
+
       hamb3.addEventListener("click", () => fs3.classList.add("open"));
       close3.addEventListener("click", () => fs3.classList.remove("open"));
+
       fs3
         .querySelectorAll("a")
         .forEach((a) =>
           a.addEventListener("click", () => fs3.classList.remove("open"))
         );
+
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") fs3.classList.remove("open");
       });

@@ -7,25 +7,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="logo">Frucino</div>
-      <div class="hamburger" id="hamburgerBtn">
-        <img src="icons/solar--hamburger-menu-outline.png" alt="menu" />
-      </div>
-    </header>
-
-    <div class="fullscreen-menu" id="fullscreenMenu">
-      <div class="fullscreen-close" id="menuClose">✕</div>
-      <a href="index.html">Меню</a>
-      <a href="contact.html">Контакты</a>
-    </div>
-
     <div class="product-detail-container">
       <div class="product-header">
-        <h1>Фраппучино</h1>
+        <h1>ФРАППУЧИНО</h1>
         <p>
-          Идеальное сочетание крепкого кофе, молока и льда, увенчанное взбитыми
-          сливками.
+          ИДЕАЛЬНОЕ СОЧЕТАНИЕ КРЕПКОГО КОФЕ, МОЛОКА И ЛЬДА, УВЕНЧАННОЕ ВЗБИТЫМИ
+          СЛИВКАМИ.
         </p>
       </div>
 
@@ -85,13 +72,13 @@
           </div>
 
           <div class="ingredients-list">
-            <h3>📜 Состав напитка</h3>
+            <h3>Состав напитка</h3>
             <ul>
-              <li>Молоко (цельное или обезжиренное)</li>
+              <li>Молоко</li>
               <li>Крепкий эспрессо или кофе-концентрат</li>
               <li>Шоколадный сироп (Мокко)</li>
               <li>Кубики льда</li>
-              <li>Специальная основа (для густоты)</li>
+              <li>Сахар</li>
               <li>Взбитые сливки (топпинг)</li>
             </ul>
           </div>
@@ -99,22 +86,8 @@
       </div>
 
       <div class="back-link">
-        <a href="menu.html">← Вернуться к Меню Напитков</a>
+        <a href="index.html">← Вернуться к Меню Напитков</a>
       </div>
     </div>
-
-    <script>
-      // Скрипт для работы бургер-меню на этой странице
-      const burger = document.getElementById("hamburgerBtn");
-      const menu = document.getElementById("fullscreenMenu");
-      const closeBtn = document.getElementById("menuClose");
-
-      burger.onclick = () => menu.classList.add("open");
-      closeBtn.onclick = () => menu.classList.remove("open");
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") menu.classList.remove("open");
-      });
-    </script>
   </body>
 </html>
